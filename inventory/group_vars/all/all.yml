@@ -1,0 +1,5 @@
+outscan:
+  site_basehref: myoutscanhost
+  username: myoutscanusername
+libellum:                                                                        
+  server: myoutscanpkihost

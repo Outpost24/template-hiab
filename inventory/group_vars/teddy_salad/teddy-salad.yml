@@ -1,0 +1,22 @@
+teddy_salad:
+  db:
+    sslmode: disable
+    host: mydsagenthost
+  endpoints:
+    - mydsagenthost:5046
+  storage:
+    endpoint:  https://s3.us-east-1.amazonaws.com
+    region: us-east-1
+  self_sign_code_signing: true
+
+psql_ssl: disable
+psql_ssl_ca_file: "{{ tls_certificates_base_path }}/outscan.crt"
+psql_ssl_cert_file: "{{ tls_certificates_base_path }}/teddy-salad.crt"
+psql_ssl_key_file: "{{ tls_keys_base_path }}/teddy-salad.key"
+
+pghba_extra:
+  - type: host
+    database: teddy-salad
+    user: teddy-salad
+    address: mydsagenthost
+    authmethod: scram-sha-256

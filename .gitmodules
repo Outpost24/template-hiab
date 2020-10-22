@@ -1,0 +1,3 @@
+[submodule "hiab-ansible"]
+	path = hiab-ansible
+	url = https://github.com/Outpost24/hiab-ansible.git
